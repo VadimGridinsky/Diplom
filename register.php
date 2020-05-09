@@ -23,15 +23,15 @@ if ($_SESSION['user']) {
         <input type="text" name="nickname" placeholder="Введите ваш никнейм">
         <label>Почта</label>
         <input type="email" name="email" placeholder="Введите адрес своей почты">
-        <label>Изображение профиля</label>
-        <input type="file" name="avatar">
         <label>Пароль</label>
         <input type="password" name="password" placeholder="Введите пароль">
         <label>Подтверждение пароля</label>
         <input type="password" name="password_confirm" placeholder="Подтвердите пароль">
-        <button type="submit">Войти</button>
+        <label>Изображение профиля</label>
+        <input type="file" name="avatar">
+        <button type="submit">Зарегистрироваться</button>
         <p>
-            У вас уже есть аккаунт? - <a href="auth.php">авторизируйтесь</a>!
+            У вас уже есть аккаунт? <br><a href="auth.php">Авторизируйтесь</a>!
         </p>
         <?php
             if ($_SESSION['message']) {
@@ -40,6 +40,6 @@ if ($_SESSION['user']) {
             unset($_SESSION['message']);
         ?>
     </form>
-
+        
 </body>
 </html>

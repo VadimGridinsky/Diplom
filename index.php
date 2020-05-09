@@ -1,3 +1,11 @@
+<?php
+session_start();
+            $folderT = 'uploads/tracks/';
+            $folderP = 'uploads/tracksphoto/';
+            $filesT = array_diff(scandir($folderT), array('..', '.'));
+            $filesP = array_diff(scandir($folderP), array('..', '.'));
+            ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +35,7 @@
                 <a href="#">Новости</a>
             </div>
             <div class="header-item">
-                <a href="#">Мой профиль</a>
+                <a href="profile.php">Мой профиль</a>
             </div>
             <div class="header-item">
                 <a href="track.php" id="track-up">Загрузить трек</a>
@@ -46,50 +54,21 @@
 <main class="main">
         <div class="wraper">
             <div class="tracks">
-                <div>
-                    <audio src="assets/audio/AAP%20Ferg%20-%20Work%20Remix%20feat%20AAP%20Rocky%20French%20Montana%20Trinidad%20James%20%20Schoolboy%20Q.mp3" controls>
-                    </audio>
-                </div>
-                <div>
-                    <audio src="assets/audio/AAP%20Ferg%20-%20Work%20Remix%20feat%20AAP%20Rocky%20French%20Montana%20Trinidad%20James%20%20Schoolboy%20Q.mp3" controls>
-                    </audio>
-                </div>
-                <div>
-                    <audio src="assets/audio/AAP%20Ferg%20-%20Work%20Remix%20feat%20AAP%20Rocky%20French%20Montana%20Trinidad%20James%20%20Schoolboy%20Q.mp3" controls>
-                    </audio>
-                </div>
-                <div>
-                    <audio src="assets/audio/AAP%20Ferg%20-%20Work%20Remix%20feat%20AAP%20Rocky%20French%20Montana%20Trinidad%20James%20%20Schoolboy%20Q.mp3" controls>
-                    </audio>
-                </div>
-                <div>
-                    <audio src="assets/audio/AAP%20Ferg%20-%20Work%20Remix%20feat%20AAP%20Rocky%20French%20Montana%20Trinidad%20James%20%20Schoolboy%20Q.mp3" controls>
-                    </audio>
-                </div>
-                <div>
-                    <audio src="assets/audio/AAP%20Ferg%20-%20Work%20Remix%20feat%20AAP%20Rocky%20French%20Montana%20Trinidad%20James%20%20Schoolboy%20Q.mp3" controls>
-                    </audio>
-                </div>
-                <div>
-                    <audio src="assets/audio/AAP%20Ferg%20-%20Work%20Remix%20feat%20AAP%20Rocky%20French%20Montana%20Trinidad%20James%20%20Schoolboy%20Q.mp3" controls>
-                    </audio>
-                </div>
-                <div>
-                    <audio src="assets/audio/AAP%20Ferg%20-%20Work%20Remix%20feat%20AAP%20Rocky%20French%20Montana%20Trinidad%20James%20%20Schoolboy%20Q.mp3" controls>
-                    </audio>
-                </div>
-                <div>
-                    <audio src="assets/audio/AAP%20Ferg%20-%20Work%20Remix%20feat%20AAP%20Rocky%20French%20Montana%20Trinidad%20James%20%20Schoolboy%20Q.mp3" controls>
-                    </audio>
-                </div>
-                <div>
-                    <audio src="assets/audio/AAP%20Ferg%20-%20Work%20Remix%20feat%20AAP%20Rocky%20French%20Montana%20Trinidad%20James%20%20Schoolboy%20Q.mp3" controls>
-                    </audio>
-                </div>
-                <div>
-                    <audio src="assets/audio/AAP%20Ferg%20-%20Work%20Remix%20feat%20AAP%20Rocky%20French%20Montana%20Trinidad%20James%20%20Schoolboy%20Q.mp3" controls>
-                    </audio>
-                </div>
+            <?php foreach($filesT as $file) : ?>
+                <div class="track"> 
+                
+                    <h3><?= $_SESSION['user']['authorname']?></h3>
+            <audio  controls src="<?= $folderT.$file; ?>"></audio>
+            
+              </div>
+            <?php endforeach; ?>
+
+            <?php foreach($filesP as $file) : ?>
+                
+                <div class="phototrack"> 
+            <img src="<?= $folderP.$file; ?>" alt="200px"></img>
+              </div>
+            <?php endforeach; ?>
 
             </div>
 

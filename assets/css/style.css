@@ -10,6 +10,7 @@ body {
     background: rgb(250, 250, 250);
     font-size: 16px;
     line-height: 1;
+    overflow: hidden;
 }
 
 a {
@@ -193,4 +194,21 @@ input {
 
 span {
     color: white;
+}
+.logout{
+    color: white;
+}
+.track{
+    height: 150px;
+    width: 100% auto;
+    background: yellow;
+    }
+.phototrack{
+        width: 300px;
+        height: 300px;
+        border: 5px solid #515151;
+}
+.phototrack img{
+        height: 100%;
+        width: auto;
 }

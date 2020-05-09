@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +30,7 @@
                 <a href="#">Новости</a>
             </div>
             <div class="header-item">
-                <a href="#">Мой профиль</a>
+                <a href="profile.php">Мой профиль</a>
             </div>
             <div class="header-item">
                 <a href="track.php" id="track-up">Загрузить трек</a>
@@ -39,22 +43,52 @@
 
     <main class="main">
         <div class="wraper">
-            <form method="post" class="form-download" enctype="multipart/form-data">
+            <form 
+            action ="Vendor/track-send.php"
+             method="post"
+             class="form-download"
+             enctype="multipart/form-data">
                 <div class="form-container">
                     <div class="form-prerender">
-                      <input type="file" name="photo" multiple accept="image/*,image/jpeg" class="download-img">
+                      <input 
+                         type="file"
+                         name="photo-track"
+                         multiple accept="image/*,image/jpeg"
+                         class="download-img"
+                         id="file" >
+                         
                       <div class="form-window">
-                      
+                      <span id="output"></span>
                       </div>      
                     </div>
                     <div class="form-input-container">
-                        <input type="text" class="input-user-name" placeholder="Имя исполнителя">
-                        <input type="text" class="input-track-name" placeholder="Название трека">
-                        <input type="file" class="input-file">
+                        <input
+                          type="text"
+                          class="input-user-name"
+                          placeholder="Имя исполнителя"
+                          name="author-name">
+                        <input
+                          type="text"
+                          class="input-track-name"
+                          placeholder="Название трека"
+                          name="track-name">
+                        <input
+                         type="file"
+                         class="input-file" 
+                         name ="track">
                     </div>
 
                 </div>
-                <input type="submit" class="input-submit" value="Отправить">
+                <input 
+                  type="submit"
+                  class="input-submit"
+                  value="Отправить">
+                  <?php
+            if ($_SESSION['message']) {
+                echo '<p class="msg"> ' . $_SESSION['message'] . ' </p>';
+            }
+            unset($_SESSION['message']);
+        ?>
             </form>
 
         </div>
@@ -64,11 +98,12 @@
     <footer>
         <div class="footer-line">
             <p class="footer-description">Mmusic - онлайн форум для музыкантов</p>
-            <a href=""><img src="assets/images/vk.jpg" width="30" height="30"></a>
+            <a href="">
+            <img src="assets/images/vk.jpg" width="30" height="30"></a>
             <a href=""><img src="assets/images/inst.png" width="30" height="30"></a>
         </div>
     </footer>
-
+ <!-- <script src="assets/scripts/preview.js"> </script> -->
 </body>
 </html>
 

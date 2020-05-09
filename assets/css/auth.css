@@ -1,5 +1,5 @@
 *{
-    margin : 0;
+    margin : 1vh;
     padding :0;
     box-sizing: border-box;
 }
@@ -7,36 +7,54 @@
 body{
  font-family: Montserrat, sans-serif;
  display: flex;
- align-items: center;
  justify-content: center;
- 
+ background: #aa4b6b;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 a{
-    color: #7c9ab7;
+    color: #e2fb00;
     font-weight: bold;
     text-decoration: none;
 }
+label{
+    color: #d1cfcf
+    
+}
+
 form{
+    
+    width: 17vw;
     display: flex;
     flex-direction: column;
-    width: 400px;
+    border: 3px solid #d1cfcf;
+    justify-content: center;
+    position: absolute;
+    align-items: center;
+   
 
 }
 p{
     margin: 10px 0;
+    color: #cac7c7;
+    font-weight: bold;
 }
  
 input{
-    margin: 10px 0;
-    padding: 10px;
-    border:  unset;
-    border-bottom: 2px solid #e3e3e3;;
-    outline: none;
+    padding: 2vh;
+    height: 3vh;
+    width: 10vw;
+    border: unset;
+    border-bottom: 2px solid #e3e3e3;
+    
 }
 button{
-    padding: 10px;
-    background: #e3e3e3;
+    margin: 1vh;
+    height: 5vh;
+    width : 10vw;
+    background: #a0ece6;
     border: unset;
     cursor: pointer;
 }
