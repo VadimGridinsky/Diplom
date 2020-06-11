@@ -1,16 +1,16 @@
 *,
 *:after,
 *:before {
+    font-family: Roboto;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
 body {
-    background: rgb(250, 250, 250);
     font-size: 16px;
     line-height: 1;
-    overflow: hidden;
+
 }
 
 a {
@@ -20,41 +20,33 @@ a {
 
 header {
     width: 100%;
-    padding: 15px 0;
+    padding: 5px 0;
     background-color: Black;
 }
 
 .header-container {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
     flex-direction: row;
     max-width: 1570px;
     margin: 0 auto;
     list-style: none;
-   
-}
+    
 
-.menu-line {
-    font-size: 20px;
-    width: 100vh;
-    display: flex;
-    justify-content: space-between;
 }
 
 .main {
     position: relative;
-    background: url("/assets/images/background.jpg") no-repeat;
-    background-color: antiquewhite;
+    background: url("/assets/images/qwe.jpg") no-repeat;
     background-size: cover;
 }
 
 .wraper {
     padding: 15px;
-    width: 95%;
     max-width: 1600px;
     margin: auto;
-    min-height: 85.9vh;
+    min-height: 86vh;
     display: flex;
     justify-content: space-between;
 
@@ -71,144 +63,74 @@ header {
 
 }
 
-footer {
-     background-color: black;
+.registration{
+    color: white;
 }
 
-.footer-line {
-    width: 50%;
+.header-item_track {
+    margin-bottom: 18px;
+    width: 150px;
+    height: 10px;
+    display: block;
+    text-align: center;
+}
+
+.header-item_track > a {
+    display: block;
+    border: 1px solid #ffff;
+    padding: 5px;
+    border-radius: 4px;
+    margin: 0 auto
+}
+
+.track {
+    height: 150px;
+    width: 100% auto;
+    background: #95295D;
+}
+
+.phototrack {
+    width: 150px;
+    height: 150px;
+    border: 5px solid #515151;
+}
+
+.phototrack img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+footer{
+    background-color: black;
+}
+
+.footer {
     display: flex;
-    justify-content:space-around;
+    justify-content: space-between;
+    width: 1570px;
+    margin: 0 175px;
+}
+.footer-text{
+    display: flex;
     align-items: center;
-    height: 5vh;
+}
+
+.footer-links{
+    margin-right: 55px;
+    display: flex;
+    justify-content: space-between;
+    width: 140px;
+    align-items: center;
 }
 
 .footer-description {
     color: white;
 }
 
-.reg-form > button {
-    width: 100%;
-    background-color: red;
-    border: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    font-size: 13px;
-    border: 1px solid black;
-    padding: 4px;
-    border-radius: 25px;
-}
-
-#track-up {
-    border: 1px solid white;
-    padding: 3px 8px;
-    border-radius: 25px;
-}
-
-
-form {
-    width: 415px;
-    position: absolute;
-    padding: 12px 0;
-    top: -666px;
-    text-align: center;
-    border-radius: 5px;
-    background: black;
-    border-radius: 3em;
-    border: 3px solid white;
-    box-shadow:
-        inset 0 0 2px 1px white,
-        0 1px 45px -15px white;
-
-
-}
-
-.form_content {
+.footer-logo{
+    width: 130px;
     display: flex;
-    flex-direction: column;
+    flex-direction:row;
     align-items: center;
     justify-content: space-between;
-    margin: 1vh;
-}
-
-.active {
-    position: absolute;
-    z-index: 666;
-    transition: 0.2s;
-    right: 20px;
-    top: 1px;
-}
-
-input {
-    text-align: center;
-    padding: 5px 5px;
-    margin-bottom: 0.4vh;
-    font-size: 12px;
-    background: white;
-    border: 1px solid white;
-    border-radius: 6px;
-    box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.1);
-
-}
-.input-button-container{
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    
-}
-
-.submit {
-    margin-bottom: 4px;
-    padding: 5px 15px;
-    border-radius: 5px;
-    background: linear-gradient(#1f2124, #27292c);
-    cursor: pointer;
-    color: white;
-    font-size: 13px;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.8);
-}
-.submit-reg {
-    padding: 5px 5px;
-    border-radius: 3px;
-    background: linear-gradient(#1f2124, #27292c);
-    cursor: pointer;
-    color: white;
-    font-size: 13px;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.8);
-}
-
-.close-button {
-    position: absolute;
-    right: 32px;
-    top: 15px;
-}
-
-.close-button-child {
-    background: navy;
-}
-
-span {
-    color: white;
-}
-.logout{
-    color: white;
-}
-.track{
-    height: 150px;
-    width: 100% auto;
-    background: yellow;
-    }
-.phototrack{
-        width: 300px;
-        height: 300px;
-        border: 5px solid #515151;
-}
-.phototrack img{
-        height: 100%;
-        width: auto;
 }

@@ -1,60 +1,92 @@
 *{
-    margin : 1vh;
+    font-family: Roboto;
     padding :0;
     box-sizing: border-box;
 }
 
 body{
+ 
  font-family: Montserrat, sans-serif;
  display: flex;
  justify-content: center;
- background: #aa4b6b;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+ background: url("/assets/images/qwe.jpg") no-repeat;
+ background-size: cover;
+}
+h2{
+    margin: 0;
+    color: white;
+    font-size: 45px;
+    font-family: Roboto;
 }
 
 a{
-    color: #e2fb00;
+    color: #95295D;
     font-weight: bold;
     text-decoration: none;
 }
+a:hover{
+    color: white;
+    
+}
 label{
-    color: #d1cfcf
+    color: #d1cfcf;
     
 }
 
 form{
-    
-    width: 17vw;
+
+    margin-top: 50px ;
+/*    background: rgba(0,0,0,.9);*/
+    width: 35%;
+    height: 75%;
     display: flex;
     flex-direction: column;
-    border: 3px solid #d1cfcf;
-    justify-content: center;
-    position: absolute;
+    justify-content: space-around;
+    position: fixed;
     align-items: center;
    
 
 }
+.logo{
+  padding: 0;  
+}
 p{
+    text-align: center;
     margin: 10px 0;
     color: #cac7c7;
     font-weight: bold;
 }
  
 input{
-    padding: 2vh;
-    height: 3vh;
-    width: 10vw;
-    border: unset;
-    border-bottom: 2px solid #e3e3e3;
+    padding: 10px;
+    margin: 10px;
+    width: 75%;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-bottom-color: white;
+    color: white;
+    outline: none;
     
+  
+}
+.upload{
+    padding-left: 137px;
+}
+input::placeholder{
+    color: white;
 }
 button{
     margin: 1vh;
     height: 5vh;
     width : 10vw;
-    background: #a0ece6;
+    background: #95295D;
     border: unset;
     cursor: pointer;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+}
+button:hover{
+    background: white;
+    color: black;
 }
