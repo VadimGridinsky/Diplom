@@ -1,7 +1,6 @@
 *,
 *:after,
 *:before {
-    font-family: Roboto;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -19,37 +18,9 @@ a {
 }
 
 header {
-    font-family: Roboto sans-serif;
     width: 100%;
-    padding: 5px 0;
+    padding: 15px 0;
     background-color: Black;
-}
-
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    max-width: 1570px;
-    margin: 0 auto;
-    list-style: none;
-    
-
-}
-.header-item_track {
-    margin-bottom: 18px;
-    width: 150px;
-    height: 10px;
-    display: block;
-    text-align: center;
-}
-
-.header-item_track > a {
-    display: block;
-    border: 1px solid #ffff;
-    padding: 5px;
-    border-radius: 4px;
-    margin: 0 auto
 }
 
 .header-container {
@@ -66,18 +37,17 @@ header {
 
 .main {
     position: relative;
-    background: url("/assets/images/qwe.jpg") no-repeat;
+    background: url("/assets/images/background.jpg") no-repeat;
     background-color: antiquewhite;
     background-size: cover;
-    min-height: 832px;
-
+    min-height: 833px;
 }
 
-.profile-container {
-    background-color: white;
-    background: rgba(0, 0, 0, 0.8);
-    max-width: 1570px;
-    margin: auto;
+.profile-container{
+       background-color: white;
+     background: rgba(0, 0, 0, 0.8);
+     width: 55%;
+      margin: auto;
     padding: 25px;
     display: flex;
     flex-direction: row;
@@ -85,20 +55,15 @@ header {
     align-items: flex-start;
 }
 
-.profile-img {
-    width: 500px;
-    height: 300px;
-    border: 5px solid #515151;
-    
-}
-
-.profile-img img {
+.profile-img{
+        width: 300px;
+        height: 300px;
+        border: 5px solid #515151;}
+.profile-img img{
     height: 100%;
-    width: 100%;
-    object-fit:cover;
+        width: auto;
 }
-
-.profile-info {
+.profile-info{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -108,15 +73,13 @@ header {
     margin-bottom: 110px;
 }
 
-h2 {
-    text-align: center;
-    padding-bottom: 15px;
-    font-family: Roboto sans-serif;
-    color: white;
-    width: 100%;
+h2{
+    padding-bottom: 30px;
+    font-family:sans-serif;
+    color: white;    
 }
 
-.logout {
+.logout{
     margin-top: 165px;
     padding: 5px 20px;
     border: 1px solid white;
@@ -126,13 +89,12 @@ h2 {
     color: white;
     background: -webkit-linear-gradient(left, rgba(0, 0, 0, 1) 0%, rgba(99, 97, 97, 1) 45%, rgba(106, 106, 106, 1) 55%, rgba(0, 0, 0, 1) 100%);
 }
-
-.logout:hover {
-    background: linear-gradient(90deg, rgba(99, 97, 97, 1) 0%, rgba(0, 0, 0, 1) 45%, rgba(0, 0, 0, 1) 55%, rgba(106, 106, 106, 1) 100%);
+.logout:hover{
+     background: linear-gradient(90deg, rgba(99, 97, 97, 1) 0%, rgba(0, 0, 0, 1) 45%, rgba(0, 0, 0, 1) 55%, rgba(106, 106, 106, 1) 100%);
 }
 
-.user-tracks {
-    max-width: 1570px;
+.user-tracks{
+    width: 80%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -140,61 +102,48 @@ h2 {
     padding: 35px 45px;
     background-color: white;
     background: rgba(0, 0, 0, 0.5);
-    max-height: auto;
-
+    height: 450px;
+    
 }
 
-.track {
-    height: 150px;
-    width: 100% auto;
-    background: #95295D;
+.track{
+height: 150px;
+width: 100% auto;
+background: yellow;
 }
-
-.phototrack {
-    width: 150px;
-    height: 150px;
+.phototrack{
+    width: 300px;
+    height: 300px;
     border: 5px solid #515151;
-
-
 }
-
-.phototrack img {
+.phototrack img{
     height: 100%;
-    width: 100%;
-    object-fit: cover;
+    width: auto;
 }
+/*
+    padding: 5vh 6vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: white;
+    background: rgba(0, 0, 0, 0.8);
+}
+*/
 
-footer{
+footer {
     background-color: black;
 }
 
-.footer {
+.footer-line {
+    width: 50%;
     display: flex;
-    justify-content: space-between;
-    width: 1570px;
-    margin: 0 175px;
-}
-.footer-text{
-    display: flex;
+    justify-content: space-around;
     align-items: center;
-}
-
-.footer-links{
-    margin-right: 55px;
-    display: flex;
-    justify-content: space-between;
-    width: 140px;
-    align-items: center;
+    height: 5vh;
 }
 
 .footer-description {
     color: white;
 }
 
-.footer-logo{
-    width: 130px;
-    display: flex;
-    flex-direction:row;
-    align-items: center;
-    justify-content: space-between;
-}

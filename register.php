@@ -1,40 +1,34 @@
 <?php
-require_once 'vendor/connect.php';
+require_once 'Vendor/connect.php';
 ?>
 
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Регистрация</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <title>Авторизация и регистрация</title>
     <link rel="stylesheet" href="assets/css/auth.css">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js" integrity="sha256-sPB0F50YUDK0otDnsfNHawYmA5M0pjjUf4TvRJkGFrI=" crossorigin="anonymous"></script> -->
 </head>
-
 <body>
-
-
-
-    <form action="vendor/signup.php" method="post" enctype="multipart/form-data">
-<div class="logo">
-                <a href="index.php">
-                    <img src="assets/images/logo2.png" width="57" height="65" alt="">
-                </a>
-            </div>
-            <h2>Регистрация</h2>
-        <input type="text" name="login" placeholder="Введите ваш логин">
-
-        <input type="text" name="nickname" placeholder="Введите ваш никнейм">
-
-        <input type="email" name="email" placeholder="Введите адрес своей почты">
-
-        <input type="password" name="password" placeholder="Введите пароль">
-
-        <input type="password" name="password_confirm" placeholder="Подтвердите пароль">
-
-        <input class="upload" type="file" name="avatar">
-        <button type="submit">Зарегистрироваться</button>
+    
+<!--  Форма авторизации --> 
+  
+<form   method="post" action="Vendor/signup.php" enctype="multipart/form-data">
+        <label>Логин</label>
+        <input type="text" id="login" name="login" placeholder="Введите ваш логин">
+        <label>Никнейм</label>
+        <input type="text" id="nickname" name="nickname" placeholder="Введите ваш никнейм">
+        <label>Почта</label>
+        <input type="email" id="email" name="email" placeholder="Введите адрес своей почты">
+        <label>Пароль</label>
+        <input type="password" id="password" name="password" placeholder="Введите пароль">
+        <label>Подтверждение пароля</label>
+        <input type="password" id="password_confirm" name="password_confirm" placeholder="Подтвердите пароль">
+        <label>Изображение профиля</label>
+        <input type="file" id="avatar" name="avatar">
+        <button type="submit" >Зарегистрироваться</button>
         <p>
             У вас уже есть аккаунт? <br><a href="auth.php">Авторизируйтесь</a>!
         </p>
@@ -45,7 +39,7 @@ require_once 'vendor/connect.php';
             unset($_SESSION['message']);
         ?>
     </form>
-
+    
 </body>
-
+<!-- <script src="assets/scripts/validation.js"></script> -->
 </html>

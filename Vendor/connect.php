@@ -1,28 +1,57 @@
-<?php   
- session_start();
-$connect = mysqli_connect('localhost', 'root', '', 'mmusic');
+    <?php
 
-if (!$connect) {
-    die('Error connect to DataBase');
-}
+    class Database
+    {
 
- function signin($login, $password, $check_user){
-    $check_user = mysqli_query($connect, "SELECT * FROM `user` WHERE `login` = '$login' AND `password` = '$password'");
-    if (mysqli_num_rows($check_user) > 0) {
-    $user = mysqli_fetch_assoc($check_user);
-    $_SESSION['user'] = [
-        "id" => $user['id'],
-        "login" => $user['login'],
-        "avatar" => $user['avatar'],
-        "email" => $user['email']
-        ];
-    header('Location: ../profile.php');
+        private $connect;
 
-} else {
-    $_SESSION['message'] = 'Неверный логин или пароль';
-    header('Location: ../auth.php');
-}
+        public function __construct()
+        {
+            $this->connect = new PDO('mysql:host=localhost;dbname=mmusic', 'root', '');
+        }
 
-}
+        public function registration($login, $nickname, $email, $password, $path)
+        {
+            if ($this->getauthorization($login)['status']) {
+                $this->response['status'] = false;
+                $this->response['errorInfo'] = 'user already exists';
+                return;
+            }
 
- 
+            $sth = $this->connect->prepare("INSERT INTO `user` (login, nickname, email, password, path) VALUES (?, ?, ?, ?, ?)");
+            $status = $sth->execute(array($login, $nickname, $email, $password, $path));
+            if (!$status) {
+                $this->response['status'] = false;
+                return;
+            }
+
+            $this->response['status'] = true;
+            $this->response['id'] = $this->connect->lastInsertId();
+            return $this->response;
+        }
+
+        public function getauthorization($login)
+        {
+            $sth = $this->connect->prepare("SELECT * FROM `user` WHERE login = ?");
+            $sth->execute(array($login));
+            if ($data = $sth->fetch()) {
+                $this->response['status'] = true;
+                $this->response['data'] = $data;
+                session_start();
+                $_SESSION['user'] = [
+                    "id" => $data['id'],
+                    "login" => $data['login'],
+                    "avatar" => $data['avatar'],
+                    "email" => $data['email']
+                ];
+            } else {
+                $this->response['status'] = false;
+                $this->response['errorInfo'] = 'This user does not exist';
+            }
+            return $this->response;
+        }
+
+
+
+       
+    }

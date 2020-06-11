@@ -1,7 +1,6 @@
 *,
 *:after,
 *:before {
-    font-family: Roboto;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -27,7 +26,7 @@ a {
 
 header {
     width: 100%;
-    padding: 5px 0;
+    padding: 15px 0;
     background-color: Black;
 }
 
@@ -41,9 +40,17 @@ header {
     list-style: none;
 }
 
+
+.menu-line {
+    font-size: 20px;
+    width: 100vh;
+    display: flex;
+    justify-content: space-between;
+}
+
 .main {
     position: relative;
-    background: url("../images/qwe.jpg") no-repeat;
+    background: url("../images/background.jpg") no-repeat;
     background-color: antiquewhite;
     background-size: cover;
 }
@@ -60,23 +67,42 @@ header {
 }
 
 
-.header-item_track {
-  margin-bottom: 18px;
-  width: 150px;
-  height: 10px;
-  display: block;
-  text-align: center;
+
+.footer-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 5vh;
+    background-color: black;
+
 }
-.header-item_track > a {
-  display: block;
-  border: 1px solid #ffff;
-  padding: 5px;
-  border-radius: 4px;
-  margin: 0 auto
+
+.footer-description {
+    color: white;
 }
-.wraper{
-    min-height: 86vh;
+
+.reg-form > button {
+    width: 100%;
+    background-color: red;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 13px;
+    border: 1px solid black;
+    padding: 4px;
+    border-radius: 25px;
 }
+
+#track-up {
+    border: 1px solid white;
+    padding: 3px 8px;
+    border-radius: 25px;
+}
+
+
+
+
 .form-download {
     display: flex;
     flex-direction: column;
@@ -86,8 +112,9 @@ header {
     width: 55%;
     padding: 23px;
     border-radius: 25px;
+    box-shadow: 0 4px 16px #ccc;
     font-family: sans-serif;
-    background: rgba(0,0,0, 0.8);
+    background: black;
 }
 
 .form-container {
@@ -102,57 +129,51 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 90%;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 220px;
 }
 
 .input-user-name {
-    padding: 10px;
-    margin: 10px;
-    width: 75%;
-    background-color: transparent;
-    border: 1px solid transparent;
-    border-bottom-color: white;
+    padding: 5px;
+    width: 70%;
+    margin-top: 15px;
+    border-radius: 25px;
     color: white;
-    outline: none;
+    font-weight:bolder;
+    box-shadow: 0 1px 5px #ccc;
+    background: linear-gradient(#1f2124, #27292c);
 }
 
 .input-track-name {
-    padding: 10px;
-    margin: 10px;
-    width: 75%;
-    background-color: transparent;
-    border: 1px solid transparent;
-    border-bottom-color: white;
-    color: white;
-    outline: none;
-}
-input::placeholder{
-    color: white;
-}
-.input-submit {
-    cursor: pointer;
-    border: unset;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
-    font-size: 1rem;
-    height: 5vh;
-    width : 10vw;
-    background:#95295D;
-}
-.input-submit:hover{
-    background: white;
-    color:black;
+    padding: 5px;
+    width: 70%;
+    margin-top: 15px;
+    border-radius: 25px;
+    color: white ;
+    font-weight:bolder;
+    box-shadow: 0 1px 5px #ccc;
+    background: linear-gradient(#1f2124, #27292c);
 }
 
-.download-track {
-    border: 1px solid #ffff;
-    border-radius: 5px;
+.input-submit {
+    color: white;
+    width: 95%;
+    background: -webkit-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(99,97,97,1) 45%, rgba(106,106,106,1) 55%, rgba(0,0,0,1) 100%);
+}
+.input-submit:hover{
+    background: linear-gradient(90deg, rgba(99,97,97,1) 0%, rgba(0,0,0,1) 45%, rgba(0,0,0,1) 55%, rgba(106,106,106,1) 100%);
+}
+
+.input-file {
+    margin-top: 15px;
+    cursor: pointer;
     background: black;
     padding: 10px 25px;
-    color: white;
+    color: #fff;
     font-weight: bold;
 }
+
 
 
 .form-prerender {
@@ -162,32 +183,37 @@ input::placeholder{
 }
 
 .download-img {
-    border-radius: 9px;
     cursor: pointer;
-    border: 1px solid #ffff;
     background: black;
-    width: 350px;
-    height: 35px;
+    padding: 10px 25px;
     color: #fff;
     font-weight: bold;
 }
 
 .form-window {
-    background: #95295D;
+    background: radial-gradient(circle, rgba(103,103,103,1) 0%, rgba(75,75,75,1) 50%, rgba(0,0,0,1) 100%);
     width: 100%;
-    border: 1px solid #ffff;
     margin: 20px;
     height: 300px;
     border-radius: 25px;
     box-shadow: 0 1px 10px #ccc;
-    overflow: hidden;
 }
-.preview-image{
-    max-width: 450px;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+
+.form-reg {
+    width: 415px;
+    position: absolute;
+    padding: 12px 0;
+    top: -666px;
+    text-align: center;
+    border-radius: 5px;
+    background: black;
+    border-radius: 3em;
+    border: 3px solid white;
+    box-shadow:
+        inset 0 0 2px 1px white,
+        0 1px 45px -15px white;
+
+
 }
 
 .form_content {
@@ -198,37 +224,64 @@ input::placeholder{
     margin: 1vh;
 }
 
-footer{
-    background-color: black;
+.active {
+    position: absolute;
+    z-index: 666;
+    transition: 0.2s;
+    right: 20px;
+    top: 1px;
 }
 
-.footer {
-    display: flex;
-    justify-content: space-between;
-    width: 1570px;
-    margin: 0 175px;
+input {
+    text-align: center;
+    padding: 5px 5px;
+    margin-bottom: 0.4vh;
+    font-size: 12px;
+    background: white;
+    border: 1px solid white;
+    border-radius: 6px;
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.1);
+
 }
-.footer-text{
+
+.input-button-container {
+    margin-top: 20px;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    width: 100%;
+
 }
 
-.footer-links{
-    margin-right: 55px;
-    display: flex;
-    justify-content: space-between;
-    width: 140px;
-    align-items: center;
-}
-
-.footer-description {
+.submit-reg {
+    padding: 5px 5px;
+    border-radius: 3px;
+    background: linear-gradient(#1f2124, #27292c);
+    cursor: pointer;
     color: white;
+    font-size: 13px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.8);
 }
 
-.footer-logo{
-    width: 130px;
-    display: flex;
-    flex-direction:row;
-    align-items: center;
-    justify-content: space-between;
+.submit {
+    margin-bottom: 4px;
+    padding: 5px 15px;
+    border-radius: 5px;
+    background: linear-gradient(#1f2124, #27292c);
+    cursor: pointer;
+    color: white;
+    font-size: 13px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.8);
+}
+
+.close-button {
+    position: absolute;
+    right: 32px;
+    top: 15px;
+}
+
+.close-button-child {
+    background: navy;
 }
