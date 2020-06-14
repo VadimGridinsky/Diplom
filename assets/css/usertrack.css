@@ -1,0 +1,224 @@
+*,
+*:after,
+*:before {
+
+    font-family: Roboto;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html{
+    font-size: 18px;
+}
+
+body {
+   display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100vh;
+    font-size: 16px;
+    line-height: 1;
+    position: relative;
+    background: url("/assets/images/qwe.jpg") no-repeat;
+    background-size: cover;
+
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+header {
+    width: 100%;
+    padding: 5px 0;
+    background-color: Black;
+    position: relative;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    max-width: 1570px;
+    width: 90%;
+    margin: 0 auto;
+    list-style: none;
+}
+
+.main {
+    margin: auto 0;
+    flex: 1;
+    max-height: 80%;
+}
+
+.wraper {
+    max-height: 100%;
+    max-width: 1570px;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: auto;
+    padding: 2rem;
+}
+
+.usertrack {
+    background: rgba(0, 0, 0, 0.8);
+    max-width: 800px;
+    margin: auto;
+    padding: 25px;
+    display: flex;
+    
+}
+.tracks{
+    max-width: 100%;
+    display: flex;
+   
+}
+
+
+.header-item_track {
+    margin-bottom: 18px;
+    width: 150px;
+    height: 10px;
+    display: block;
+    text-align: center;
+}
+
+.header-item_track > a {
+    display: block;
+    border: 1px solid #ffff;
+    padding: 5px;
+    border-radius: 4px;
+    margin: 0 auto
+}
+
+.header-button {
+    display: none;
+}
+.header-menu {
+    display: none;
+    z-index: 100;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    flex-direction: column;
+    padding: 1.5rem;
+    background-color: #212121;
+  
+    
+}
+.header-menu.show {
+    display: flex;
+}
+.header-menu_item:not(:first-child) {
+    margin-top: 1rem;
+}
+.registration {
+    display: flex;
+    align-items: center;
+}
+.user {
+    margin-right: 1rem;
+}
+
+footer{
+    background-color: black;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1570px;
+    width: 90%;
+    margin: 0 auto;
+}
+.footer-text{
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.footer-links{
+    margin-right: 55px;
+    display: flex;
+    justify-content: space-between;
+    width: 140px;
+    align-items: center;
+}
+
+.footer-decription {
+    color: white;
+}
+
+.footer-logo{
+    color: white;
+    width: 130px;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media all and (max-width: 800px) {
+    .header-item {
+        display: none;
+    }
+    .registration {
+        margin: 0 2rem 0 auto;
+    }
+    .header-button {
+        display: block;
+    }
+    .tracks {
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+    .track-info {
+        display: none;
+    }
+    .phototrack-name {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .phototrack img {
+        margin-right: 1rem;
+        height: 80px;
+        width: 80px;
+    }
+    .track-description {
+        margin-left: 0;
+        width: 100%;
+    }
+    .track-description audio {
+        width: 100%;
+        min-width: auto;
+    }
+    .wrapper {
+        width: 100%;
+        padding: 1rem;
+    }
+    .main {
+        max-height: 70%;
+    }
+}
+
+@media all and (max-width: 700px) {
+    .footer {
+        flex-direction: column-reverse;
+        align-items: center;
+        padding: 1rem 0;
+    }
+    .footer-links {
+        margin-right: 0;
+        width: 80%;
+    }
+    .footer-item:not(:last-child) {
+        margin-top: .8rem;
+    }
+}

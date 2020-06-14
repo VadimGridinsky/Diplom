@@ -48,14 +48,14 @@
 
         public function getTracks($user_id = false) {
             if ($user_id) {
-                $request = $this->connect->prepare("SELECT t.track_name,t.Author, t.audio, t.id, t.image, t.id_user, u.nickname, g.name as genre 
+                $request = $this->connect->prepare("SELECT t.track_name, t.audio, t.id, t.image, t.id_user, u.nickname, g.name as genre 
                 FROM `track` AS t 
                 INNER JOIN `user` AS u ON u.id = t.id_user 
                 INNER JOIN `genre` AS g ON g.id = t.id_genre 
                 WHERE t.id_user = ?");
                 $request->execute(Array($user_id));
             } else {
-                $request = $this->connect->prepare("SELECT t.track_name,t.Author, t.audio, t.id, t.image, t.id_user, u.nickname, g.name as genre 
+                $request = $this->connect->prepare("SELECT t.track_name, t.audio, t.id, t.image, t.id_user, u.nickname, g.name as genre 
                 FROM `track` AS t 
                 INNER JOIN `user` AS u ON u.id = t.id_user 
                 INNER JOIN `genre` AS g ON g.id = t.id_genre ");
@@ -64,18 +64,23 @@
 
             return $request->fetchAll(PDO::FETCH_ASSOC);
         }
-        /* public function genreshow(){
-            
-            $request = $this->connect->prepare("SELECT * FROM `genre`");
-            $request->execute();
-           
-            return $request->fetchAll(PDO::FETCH_ASSOC);
 
-        } */
-        public function tracksend($trackname, $authorname, $tracks, $phototrack, $id_user/* , $genre */){
+        public function getTrack($trackId) {
+        
+                $request = $this->connect->prepare("SELECT t.track_name, t.audio, t.id, t.image, t.id_user, u.nickname, g.name as genre 
+                FROM `track` AS t 
+                INNER JOIN `user` AS u ON u.id = t.id_user 
+                INNER JOIN `genre` AS g ON g.id = t.id_genre 
+                WHERE t.id = ? ");
+                $request->execute(Array($trackId));
+            
+
+            return $request->fetch();
+        }
+        public function addComment($trackId, $userId, $comment){
          
-            $request = $this->connect->prepare("INSERT INTO track (track_name, Author, audio, image, id_user/* , id_genre */) VALUES (?, ?, ?, ?, ?/* ,? */)");
-            $status = $request->execute(Array($trackname, $authorname, $tracks, $phototrack, $id_user, /* $genre */));
+            $request = $this->connect->prepare("INSERT INTO comment (content, id_user, id_track) VALUES (?, ?, ?)");
+            $status = $request->execute(Array($comment, $userId, $trackId));
             
             if (!$status) {
                 $this->response['status'] = false;
@@ -84,5 +89,50 @@
             $this->response['status'] = true;
             return $this->response;
             
+    }
+
+    public function getComments($trackId) {
+        
+            $request = $this->connect->prepare("SELECT c.content, c.id as author_id, u.nickname 
+            FROM `comment` AS c 
+            INNER JOIN `user` AS u ON u.id = c.id_user 
+            WHERE c.id_track = ?");
+            $request->execute(Array($trackId));
+
+
+        return $request->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+        public function getGenres(){
+            
+            $request = $this->connect->prepare("SELECT * FROM `genre`");
+            $request->execute();
+           
+            return $request->fetchAll(PDO::FETCH_ASSOC);
+
+        }
+        public function trackSend($trackname, $tracks, $phototrack, $id_user, $genre){
+         
+            $request = $this->connect->prepare("INSERT INTO track (track_name, audio, image, id_user, id_genre) VALUES (?, ?, ?, ?, ?)");
+            $status = $request->execute(Array($trackname, $tracks, $phototrack, $id_user, $genre));
+            
+            if (!$status) {
+                $this->response['status'] = false;
+                return;
+            }
+            $this->response['status'] = true;
+            return $this->response;
+            
+    }
+    public function deleteTrack($trackId){
+        $request = $this->connect->prepare("DELETE FROM `track` WHERE id = ? ");
+        $status = $request->execute(Array($trackId));
+        
+        if (!$status) {
+            $this->response['status'] = false;
+            return;
+        }
+        $this->response['status'] = true;
+        return $this->response;
     }
 }

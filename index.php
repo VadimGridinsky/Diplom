@@ -34,15 +34,15 @@ require_once 'start.php';
                 <a href="news.php">Новости</a>
             </div>
             <div class="header-item">
-            <a href="<?= $_SESSION['user'] ? "profile.php" : "auth.php" ?>">Мой профиль</a>
+                <a href="<?= $_SESSION['user'] ? "profile.php" : "auth.php" ?>">Мой профиль</a>
             </div>
             <div class="header-item header-item_track">
                 <a href="track.php" class="track-up">Загрузить трек</a>
             </div>
-           
+
             <div class="registration">
-                <a href="<?= $_SESSION['user']['login'] ? "profile.php" : "auth.php" ?> "class="user"><?= $_SESSION['user']['login'] ?></?a>
-                 <a href="<?= $_SESSION['user']['login'] ? "profile.php" : "auth.php" ?>"><img src="assets/images/wwwww.png" width="30" height="30"></a>
+                <a href="<?= $_SESSION['user']['login'] ? "profile.php" : "auth.php" ?> " class="user"><?= $_SESSION['user']['login'] ?></?a>
+                    <a href="<?= $_SESSION['user']['login'] ? "profile.php" : "auth.php" ?>"><img src="assets/images/wwwww.png" width="30" height="30"></a>
             </div>
             <img class="header-button" src="/assets/images/menu.svg" alt="menu">
             <div class="header-menu">
@@ -62,28 +62,35 @@ require_once 'start.php';
         </div>
     </header>
 
-    
+
     <main class="main">
 
         <div class="wrapper">
             <h2>Музыкальная галерея</h2>
+
             <?php foreach ($tracks as $track) { ?>
-            <div class="tracks">
+            <a href="usertrack.php?id=<?=$track['id']?>" class="tracks">
                 <div class="phototrack">
                     <img src="<?=$track['image'];?>" alt=""></img>
                 </div>
+
                 <div class="track-description">
-                <p class="trackname"><?= $track['Author'];?></p>    
-                <p class="trackname"> <?= $track['track_name'];?></p>
-                <p class="genre"> <?= $track['genre'];?></p>
-                <audio controls src="<?= $track['audio'];?>"></audio>
+
+                    <div class="track-info">
+                        <p class="trackname"><?= $track['nickname'];?></p>
+                        <p class="trackname">-</p>
+                        <p class="trackname"> <?= $track['track_name'];?></p>
+                    </div>
+
+                    <p class="genre"> <?= $track['genre'];?></p>
+                    <audio controls src="<?= $track['audio'];?>"></audio>
                 </div>
-            </div>
+            </a>
             <?php } ?>
         </div>
 
-       
-        
+
+
     </main>
 
     <footer>

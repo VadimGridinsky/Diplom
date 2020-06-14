@@ -86,13 +86,17 @@ $tracks = $db->getTracks($_SESSION['user']['id']);
                 <?php foreach ($tracks as $track) { ?>
         <div class="tracks">
                 <div class="phototrack">
-                    <img src="<?=$track['image'];?>" alt=""></img>
+                    <img src="<?=$track['image'];?>" alt="">
                 </div>
                 <div class="track-description">
                 <p class="trackname"> <?= $track['track_name'];?></>
                 <p class="genre"> <?= $track['genre'];?></p>
                 <audio controls src="<?= $track['audio'];?>"></audio>
                 </div>
+                <form action="Vendor/deletetrack.php" method = "POST" >
+                    <input type="hidden" name="track" value="<?= $track['id'];?>" >
+                    <button type="submit"> Удалить Трек </button>
+                </form>
             </div>
             <?php } ?>
            

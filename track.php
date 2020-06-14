@@ -1,8 +1,8 @@
 <?php
 require_once 'start.php';
 require_once 'Vendor/connect.php';
-/* $db = new Database();
-$genres = $db->genreshow(); */
+$db = new Database();
+$genres = $db->getGenres();
 ?>
 
 <!DOCTYPE html>
@@ -79,13 +79,13 @@ $genres = $db->genreshow(); */
                         
                         <input readonly class="track-name" type="text" id="track-text">
                         
-                        <!-- <p class="genre" >Выберите жанр</p>
+                      <p class="genre" >Выберите жанр</p>
                         <select class="genre-select" name="genre">
                         <?php foreach ($genres as $genre) { ?>
-                            <option value ="<?=$genre['id']?>"><?$genre['name']?></option>
-                            
+                            <option value ="<?=$genre['id']?>"><?=$genre['name']?></option>
+                        <?php } ?> 
                         </select>
-                        <?php } ?> -->
+                       
                     </div>
 
                 </div>

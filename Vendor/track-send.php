@@ -5,7 +5,7 @@
     $trackname = $_POST['track-name'];
     $id_user = $_SESSION['user']['id'];
     $genre = $_POST['genre'];
-    /* $user_name = $_SESSION['user']['nickname']; */
+ 
         $tracks = 'uploads/tracks/' . time() . $_FILES['track']['name'];
         if (!move_uploaded_file($_FILES['track']['tmp_name'], '../' . $tracks)) {
             $_SESSION['message'] = 'Ошибка при загрузке трека';
@@ -18,8 +18,8 @@
         }
 
         $db = new Database();
-        $response = $db->tracksend($trackname, $authorname, $tracks, $phototrack, $id_user);
-        /* var_dump($authorname); */
+        $response = $db->trackSend($trackname, $tracks, $phototrack, $id_user, $genre);
+        
         $_SESSION['message'] = 'Трек загружен успешно!';
         header('Location: ../profile.php');
 
