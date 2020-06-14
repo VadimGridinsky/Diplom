@@ -1,218 +1,261 @@
 *,
 *:after,
 *:before {
+    font-family: Roboto;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
-
-body {
-    background: rgb(250, 250, 250);
-    font-size: 16px;
-    line-height: 1;
-    /* overflow: hidden; */
+html{
+    font-size: 18px;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100vh;
+    font-size: 16px;
+    line-height: 1;
+    position: relative;
+    background: url("/assets/images/qwe.jpg") no-repeat;
+    background-size: cover;
+}
+h2{
+    font-size: 1.5rem;
+    width: 100%;
+    color: #E13487;
+    margin-bottom: 1.5rem;
+}
+.genre{
+    font-size: 0.8rem;
+    color: #E13487;
+    margin: .5rem 0 auto 0;
+}
+.trackname{
+    min-width: 100%;
+    color: white;
+}
 a {
     text-decoration: none;
     color: white;
 }
 
+
+audio{
+    max-height: 2rem;
+    min-width: 515px;
+}
 header {
     width: 100%;
-    padding: 15px 0;
+    padding: 5px 0;
     background-color: Black;
+    position: relative;
 }
 
 .header-container {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
     flex-direction: row;
     max-width: 1570px;
+    width: 90%;
     margin: 0 auto;
     list-style: none;
-   
 }
 
-.menu-line {
-    font-size: 20px;
-    width: 100vh;
+.main{
+    margin: auto 0;
+    flex: 1;
+    max-height: 80%;
+}
+.wrapper{
+    max-height: 100%;
+    overflow-y: scroll;
+    max-width: 1570px;
+    width: 90%;
     display: flex;
     justify-content: space-between;
-}
-
-.main {
-    position: relative;
-    background: url("/assets/images/background.jpg") no-repeat;
-    background-color: antiquewhite;
-    background-size: cover;
-}
-
-.wraper {
-    padding: 15px;
-    width: 95%;
-    max-width: 1600px;
+    flex-wrap: wrap;
     margin: auto;
-    min-height: 85.9vh;
-    display: flex;
-    justify-content: space-between;
-    
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0, .4);
+    background-color: white;
+    background: rgba(0, 0, 0, 0.5);
+
 }
+::-webkit-scrollbar { width: 5px;}
+::-webkit-scrollbar-track {  background-color: white;}
+::-webkit-scrollbar-thumb { height: 50px; background-color: #E13487; border-radius: 3px;}
 
 .tracks {
-    
-    
+    display: flex;
     justify-content: space-around;
-    align-items: start;
-    padding: 5vh 6vh;
-    width: 100%;
-    background-color: white;
-    background: rgba(0, 0, 0, 0.8);
+    min-height: 140px;
+
+}
+.track-description{
+    padding:0 15px ;
+    max-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
-.track{
-    float:right;
-    height: 150px;
-    padding: 5vh 6vh;
-    width: 89%;
-    background: white;
-    border: 3px solid #ac0f0f;
-    }
-.phototrack{
-        width: 150px;
-        height: 150px;
-        border: 5px solid #515151;
+
+.header-item_track {
+    margin-bottom: 18px;
+    width: 150px;
+    height: 10px;
+    display: block;
+    text-align: center;
 }
-.phototrack img{
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
+
+.header-item_track > a {
+    display: block;
+    border: 1px solid #ffff;
+    padding: 5px;
+    border-radius: 4px;
+    margin: 0 auto
 }
-footer {
+.header-button {
+    display: none;
+}
+.header-menu {
+    display: none;
+    z-index: 100;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    flex-direction: column;
+    padding: 1.5rem;
+    background-color: #212121;
+  
+    
+}
+.header-menu.show {
+    display: flex;
+}
+.header-menu_item:not(:first-child) {
+    margin-top: 1rem;
+}
+.registration {
+    display: flex;
+    align-items: center;
+}
+.user {
+    margin-right: 1rem;
+}
+.phototrack {
+    display: flex;
+    justify-content: flex-start;
+}
+.phototrack-name {
+    display: none;
+}
+
+.phototrack img {
+    object-fit: cover;
+    border: 2px solid white;
+    width: 100px;
+    height: 100px;
+    border-radius: 3px;
+}
+footer{
     background-color: black;
 }
 
-.footer-line {
-    width: 50%;
+.footer {
     display: flex;
-    justify-content:space-around;
+    justify-content: space-between;
+    max-width: 1570px;
+    width: 90%;
+    margin: 0 auto;
+}
+.footer-text{
+    color: white;
+    display: flex;
     align-items: center;
-    height: 5vh;
 }
 
-.footer-description {
-    color: white;
-}
-
-.reg-form > button {
-    width: 100%;
-    background-color: red;
-    border: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    font-size: 13px;
-    border: 1px solid black;
-    padding: 4px;
-    border-radius: 25px;
-}
-
-#track-up {
-    border: 1px solid white;
-    padding: 3px 8px;
-    border-radius: 25px;
-}
-
-
-form {
-    width: 415px;
-    position: absolute;
-    padding: 12px 0;
-    top: -666px;
-    text-align: center;
-    border-radius: 5px;
-    background: black;
-    border-radius: 3em;
-    border: 3px solid white;
-    box-shadow:
-        inset 0 0 2px 1px white,
-        0 1px 45px -15px white;
-
-
-}
-
-.form_content {
+.footer-links{
+    margin-right: 55px;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    width: 140px;
+    align-items: center;
+}
+
+.footer-decription {
+    color: white;
+}
+
+.footer-logo{
+    color: white;
+    width: 130px;
+    display: flex;
+    flex-direction:row;
     align-items: center;
     justify-content: space-between;
-    margin: 1vh;
 }
 
-.active {
-    position: absolute;
-    z-index: 666;
-    transition: 0.2s;
-    right: 20px;
-    top: 1px;
+@media all and (max-width: 800px) {
+    .header-item {
+        display: none;
+    }
+    .registration {
+        margin: 0 2rem 0 auto;
+    }
+    .header-button {
+        display: block;
+    }
+    .tracks {
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+    .track-info {
+        display: none;
+    }
+    .phototrack-name {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .phototrack img {
+        margin-right: 1rem;
+        height: 80px;
+        width: 80px;
+    }
+    .track-description {
+        margin-left: 0;
+        width: 100%;
+    }
+    .track-description audio {
+        width: 100%;
+        min-width: auto;
+    }
+    .wrapper {
+        width: 100%;
+        padding: 1rem;
+    }
+    .main {
+        max-height: 70%;
+    }
 }
 
-input {
-    text-align: center;
-    padding: 5px 5px;
-    margin-bottom: 0.4vh;
-    font-size: 12px;
-    background: white;
-    border: 1px solid white;
-    border-radius: 6px;
-    box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.1);
-
-}
-.input-button-container{
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    
-}
-
-.submit {
-    margin-bottom: 4px;
-    padding: 5px 15px;
-    border-radius: 5px;
-    background: linear-gradient(#1f2124, #27292c);
-    cursor: pointer;
-    color: white;
-    font-size: 13px;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.8);
-}
-.submit-reg {
-    padding: 5px 5px;
-    border-radius: 3px;
-    background: linear-gradient(#1f2124, #27292c);
-    cursor: pointer;
-    color: white;
-    font-size: 13px;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.8);
-}
-
-.close-button {
-    position: absolute;
-    right: 32px;
-    top: 15px;
-}
-
-.close-button-child {
-    background: navy;
-}
-
-span {
-    color: white;
-}
-.logout{
-    color: white;
+@media all and (max-width: 700px) {
+    .footer {
+        flex-direction: column-reverse;
+        align-items: center;
+        padding: 1rem 0;
+    }
+    .footer-links {
+        margin-right: 0;
+        width: 80%;
+    }
+    .footer-item:not(:last-child) {
+        margin-top: .8rem;
+    }
 }

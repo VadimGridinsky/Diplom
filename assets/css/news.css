@@ -1,0 +1,106 @@
+*,
+*:after,
+*:before {
+
+    font-family: Roboto;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    overflow: hidden;
+    font-size: 16px;
+    line-height: 1;
+
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+header {
+    padding: 5px 0;
+    background-color: Black;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    max-width: 1570px;
+    margin: 0 auto;
+    list-style: none;
+    
+
+}
+
+.main {
+    min-height: 86vh;
+    position: relative;
+    background: url("/assets/images/qwe.jpg") no-repeat;
+    background-size: cover;
+}
+
+.wraper {
+    padding: 15px;
+    max-width: 1600px;
+    margin: auto;
+    min-height: 86vh;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.header-item_track {
+    margin-bottom: 18px;
+    width: 150px;
+    height: 10px;
+    display: block;
+    text-align: center;
+}
+
+.header-item_track > a {
+    display: block;
+    border: 1px solid #ffff;
+    padding: 5px;
+    border-radius: 4px;
+    margin: 0 auto
+}
+
+footer{
+    background-color: black;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    width: 1570px;
+    margin: 0 175px;
+}
+.footer-text{
+    display: flex;
+    align-items: center;
+}
+
+.footer-links{
+    margin-right: 55px;
+    display: flex;
+    justify-content: space-between;
+    width: 140px;
+    align-items: center;
+}
+
+.footer-description {
+    color: white;
+}
+
+.footer-logo{
+    width: 130px;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: space-between;
+}
